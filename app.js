@@ -59,7 +59,7 @@ passport.deserializeUser(function (id, done) {
 passport.use(new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/google/secrets",
+    callbackURL: "https://secrets-ls24.onrender.com/auth/google/secrets",
     userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
 },
     function (accessToken, refreshToken, profile, cb) {
@@ -73,7 +73,7 @@ passport.use(new GoogleStrategy({
 passport.use(new TwitterStrategy({
     consumerKey: process.env.TWITTER_ID,
     consumerSecret: process.env.TWITTER_SECRET,
-    callbackURL: "http://localhost:3000/auth/twitter/secrets"
+    callbackURL: "https://secrets-ls24.onrender.com/auth/twitter/secrets"
 },
     function (token, tokenSecret, profile, cb) {
         console.log(profile);
@@ -86,7 +86,7 @@ passport.use(new TwitterStrategy({
 passport.use(new GitHubStrategy({
     clientID: process.env.GITHUB_ID,
     clientSecret: process.env.GITHUB_SECRET,
-    callbackURL: "http://127.0.0.1:3000/auth/github/secrets"
+    callbackURL: "https://secrets-ls24.onrender.com/auth/github/secrets"
 },
     function (accessToken, refreshToken, profile, done) {
         console.log(profile);
