@@ -98,7 +98,7 @@ passport.use(new GitHubStrategy({
 ));
 
 app.get("/", function (req, res) {
-    res.render("Home");
+    res.render("home");
 });
 
 app.get("/auth/google",
@@ -126,7 +126,7 @@ app.get('/auth/github/secrets',
     });
 
 app.get("/login", function (req, res) {
-    res.render("Login");
+    res.render("login");
 });
 app.post("/login", function (req, res) {
 
@@ -195,7 +195,7 @@ app.get("/logout", function (req, res) {
 });
 
 app.get("/register", function (req, res) {
-    res.render("Register");
+    res.render("register");
 });
 app.post("/register", function (req, res) {
 

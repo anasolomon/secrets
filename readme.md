@@ -462,7 +462,7 @@ To start implemeting OAuth like Google's we can go into the passport's ["Strateg
 npm install passport-google-oauth20
 ```
 While it's installing we can go ahead and use the [Google Developers Console](https://console.cloud.google.com/projectselector2/apis/dashboard?supportedpurview=project) as per suggested in the Documentation and create a "new project"   
-![](https://media.discordapp.net/attachments/1141016274160328756/1142489075975196682/Screenshot_2.png)
+![](https://media.discordapp.net/attachments/1141016274160328756/1142489075975196682/Screenshot_2.png)  
 I called it "Secret". We then go ahead and navigate our way into the "OAuth Consent Screen" tab. We can add a name for our App, a logo and most importantly in the Scopes is where we get to choose which information to access from our user. To enable some specific scopes you might need to implement specific Google API libraries. We won't need to since we will only be requiring basic user information such as "Email, profile and id". For now we won't be touching the domain link because our website is not live yet.  
 ![](https://media.discordapp.net/attachments/1141016274160328756/1142501716907012127/Screenshot_3.png)
 Then we need to add OAuth client ID which is what will allow the users to be Authenticated, we are a Web Application with name "Secrets" and the Authorized JavaScript origin is `http://localhost:3000` which is ment for testing, when our website is live we can come back to update this line. Authorized Redirect URIs is where Google redirects the user to after a successful authentication, for us it's `http://localhost:3000/auth/google/secrets`  
@@ -658,32 +658,33 @@ We are passing the whole user Document that we find to the EJS scriptlet so we t
         <% }) %>
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # Screenshots
 **Home Page**
 ![](https://media.discordapp.net/attachments/1141016274160328756/1142799203450503240/Home.png?width=1360&height=676)
 **Register Page**
-![](https://media.discordapp.net/attachments/1141016274160328756/1142799203177857045/Screenshot_2023-08-20_at_07-29-53_Secrets.png?width=1360&height=676)
+![](https://media.discordapp.net/attachments/1141016274160328756/1142875450528514138/Screenshot_2023-08-20_at_10-33-42_Secrets.png?width=1360&height=676)
 **Login Page**
-![](https://media.discordapp.net/attachments/1141016274160328756/1142799202871681206/Screenshot_2023-08-20_at_07-30-08_Secrets.png?width=1360&height=676)
+![](https://media.discordapp.net/attachments/1141016274160328756/1142875450906005644/Screenshot_2023-08-20_at_10-33-48_Secrets.png?width=1360&height=676)
 **Secrets Page**
 ![](https://media.discordapp.net/attachments/1141016274160328756/1142799203693764718/Screenshot_2023-08-20_at_07-34-53_Secrets.png?width=1360&height=676)
 **Submit Page**
 ![](https://media.discordapp.net/attachments/1141016274160328756/1142799204004135003/Screenshot_2023-08-20_at_07-35-02_Secrets.png?width=1360&height=676)
+
+
+
+
+
+## Extra
+Added [Twitter](https://www.passportjs.org/packages/passport-twitter/) as OAuth method
+```
+npm install passport-twitter
+```
+The [developers console for twitter](https://developer.twitter.com/en/apps)
+
+
+Added [Github](https://www.passportjs.org/packages/passport-github2/) as OAuth method
+```
+npm install passport-github2
+```
+The [developers console for github](https://github.com/settings/applications/new)
+
